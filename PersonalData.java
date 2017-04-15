@@ -1,10 +1,7 @@
-// import java.io.Console;
-// import java.util.*;
-// import java.io.IOException;
 public class PersonalData{
   private String firstName;
   private String lastName;
-  private String zip;
+  private int zip;
 
   PersonalData(){
 
@@ -12,7 +9,7 @@ public class PersonalData{
   PersonalData(String firstName, String lastName, String zip){
     this.firstName = firstName;
     this.lastName = lastName;
-    this.zip = zip;
+    this.zip = Integer.parseInt(zip);
   }
 
   public String getFirstName(){
@@ -23,7 +20,7 @@ public class PersonalData{
     return this.lastName;
   }
 
-  public String getZip(){
+  public int getZip(){
     return this.zip;
   }
 
