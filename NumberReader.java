@@ -34,7 +34,7 @@ public class NumberReader{
     // for(int i = 0; i < numListAsArray.length; i++){
     //   numListAsArray[i] = (Integer)numListAsArraysObject[i];
     // }
-    ArrayList<Integer> doopsList = new ArrayList<Integer>();
+    ArrayList<Integer> values = new ArrayList<Integer>();
     ArrayList<Integer> counting = new ArrayList<Integer>();
     int[] myCountingArray = new int[numberList.size()];
     // int index = numberList.get(0);
@@ -49,35 +49,38 @@ public class NumberReader{
     // }
     // for(Integer i : numberList){
     Collections.sort(numberList);
-    for(Integer i : numberList)
-      System.out.println(i);
-
-    int countingIndex =0;
-    int indexOfi;
-    int lastIndexOfi;
-
-    for(int i =0; i < numberList.size(); i++){
-
-      indexOfi = numberList.indexOf(numberList.get(i));
-      lastIndexOfi = numberList.lastIndexOf(numberList.get(i));
-
-      if(indexOfi !=  lastIndexOfi && numberList.get(i) != countingIndex){
-        System.out.println("in nested for loop");
-
-        for(int j =i; j < numberList.size(); j++){
-
-          if(numberList.get(i) == numberList.get(j)){
-            System.out.println(numberList.get(i)+" i is equal to j "+ numberList.get(j));
-            numberList.remove(indexOfi);
-            myCountingArray[countingIndex] = countDuplicate++;
-            System.out.println(myCountingArray[i]);
-          }
-
-        }
-      }
-      countingIndex++;
-      countDuplicate = 1;
-
+    int count =1;
+for(int i=0; i<numberList.size(); i++){
+  if(i<numberList.size()-1){
+    if(numberList.get(i)==numberList.get(i+1)){
+      count++;
     }
+  }else{
+    System.out.print(numberList.get(i)+"occurs "+count+ " times");
+  }
+  if(i<numberList.size()-1 && numberList.get(i)!= numberList.get(i+1)){
+    System.out.println(numberList.get(i)+ " occurs "+count+ " times");
+    count=1;
+  }
+}
+
+
+    // for(Integer i : numberList)
+    //   System.out.println(i);
+    //
+    // int countingIndex =0;
+    // int indexOfi;
+    // int lastIndexOfi;
+    //
+    // for(int i =0; i < numberList.size()-1; i++){
+    //   if(numberList.get(i) == numberList.get(i+1)){
+    //       values.add(numberList.get(i));
+    //       // counting.get(i) = counting.get(i+1);
+    //       // System.out.println("value of " +values.get(i) +" Is ");
+    //   }
+    // }
+    // for(int i = 0; i < values.size(); i++){
+    //   System.out.println(values.get(i));
+    // }
   }
 }
