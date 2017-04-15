@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class TestPersonalData{
+public class RunPersDataFile{
   public static void main(String[] args) throws IOException {
     //PART 3 OF HW SAVE AND READ FROM A FILE
     String filename = "myPersonalData.txt";
@@ -13,9 +13,13 @@ public class TestPersonalData{
     //make filewriter instance w personalData file & BF instance w FW
     FileWriter fw = new FileWriter(personalData);
     BufferedWriter writeToFile = new BufferedWriter(fw);
+    //==================================================================READING
+    BufferedReader reader = new BufferedReader(new FileReader(filename));
 
     //create an arraylist to store our object which holds the
     ArrayList<PersonalData> pData = new ArrayList<PersonalData>();
+
+    ArrayList<String> pDataForFile = new ArrayList<String>();
 
     Console c = System.console();
     //Java docs shows to do this, I guess it is a safty net in case something
@@ -65,6 +69,10 @@ public class TestPersonalData{
           //   System.out.println(pData.get(i).getLastName());
           //   System.out.println(pData.get(i).getZip());
           // }
+          for(PersonalData pD : pData){
+            writeToFile.write(pD.getFirstName()+ " " +pD.getLastName()+" "+pD.getZip()+"\n");
+          }
+          writeToFile.close();
           System.exit(0);
         }
     }
