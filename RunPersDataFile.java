@@ -8,37 +8,34 @@ public class RunPersDataFile{
     //if the file does not exist make it
     if(!personalData.exists()){
       personalData.createNewFile();
+      System.out.println(filename+" was created");
     }
-    System.out.println(filename+" was created");
+
     //make filewriter instance w personalData file & BF instance w FW
     FileWriter fw = new FileWriter(personalData);
     BufferedWriter writeToFile = new BufferedWriter(fw);
-    //==================================================================READING
-    BufferedReader reader = new BufferedReader(new FileReader(filename));
+
+
 
     //create an arraylist to store our object which holds the
     ArrayList<PersonalData> pData = new ArrayList<PersonalData>();
 
-    ArrayList<String> pDataForFile = new ArrayList<String>();
-
     Console c = System.console();
-    //Java docs shows to do this, I guess it is a safty net in case something
-    //goes wrong during loading a console?
     if(c == null){
       System.err.println("No console, so...");
       System.exit(1);
     }
-//make an infinate loop to always run, unless user types quit,
+
     while(true){
       //create placeholders for the params we are going to pass into our PData constructor
         String firstN = null;
         String lastN = null;
         String zipCode = null;
-        //use the Console.readLine function to catch the users input
+
         String input = c.readLine("enter a first and last name & zip seperated by tabkey, type quit to exit: ");
-        //store each input into an array, and split it at the tab
+
           String[] persDataSplitTab = input.split("\t");
-          // System.out.println(persDataSplitTab.length);
+
 
           //a regular boolean statement input != quit doesnt work ?
           if("quit".equals(input) == false){
@@ -63,16 +60,18 @@ public class RunPersDataFile{
           //when the user types quit we will use the System method exit() to break out of loop
         if("quit".equals(input)){
           System.out.println(pData.size());
-          // for(int i =0; i < pData.size(); i++){
-          //   System.out.println("================part two HW=====================");
-          //   System.out.println(pData.get(i).getFirstName());
-          //   System.out.println(pData.get(i).getLastName());
-          //   System.out.println(pData.get(i).getZip());
-          // }
+
           for(PersonalData pD : pData){
-            writeToFile.write(pD.getFirstName()+ " " +pD.getLastName()+" "+pD.getZip()+"\n");
+            writeToFile.write(pD.getFirstName()+ " " +pD.getLastName()+" "+pD.getZip()+System.lineSeparator());
           }
           writeToFile.close();
+          //=============================READING======================================
+          BufferedReader reader = new BufferedReader(new FileReader(filename));
+          String ln;
+          while((ln = reader.readLine()) != null){
+            System.out.println(ln);
+          }
+
           System.exit(0);
         }
     }
