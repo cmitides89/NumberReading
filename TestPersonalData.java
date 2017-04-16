@@ -2,17 +2,17 @@ import java.io.*;
 import java.util.*;
 public class TestPersonalData{
   public static void main(String[] args) throws IOException {
-    //PART 3 OF HW SAVE AND READ FROM A FILE
-    String filename = "myPersonalData.txt";
-    File personalData = new File(filename);
-    //if the file does not exist make it
-    if(!personalData.exists()){
-      personalData.createNewFile();
-    }
-    System.out.println(filename+" was created");
-    //make filewriter instance w personalData file & BF instance w FW
-    FileWriter fw = new FileWriter(personalData);
-    BufferedWriter writeToFile = new BufferedWriter(fw);
+    // //PART 3 OF HW SAVE AND READ FROM A FILE
+    // String filename = "myPersonalData.txt";
+    // File personalData = new File(filename);
+    // //if the file does not exist make it
+    // if(!personalData.exists()){
+    //   personalData.createNewFile();
+    // }
+    // System.out.println(filename+" was created");
+    // //make filewriter instance w personalData file & BF instance w FW
+    // FileWriter fw = new FileWriter(personalData);
+    // BufferedWriter writeToFile = new BufferedWriter(fw);
 
     //create an arraylist to store our object which holds the
     ArrayList<PersonalData> pData = new ArrayList<PersonalData>();
@@ -59,12 +59,12 @@ public class TestPersonalData{
           //when the user types quit we will use the System method exit() to break out of loop
         if("quit".equals(input)){
           System.out.println(pData.size());
-          // for(int i =0; i < pData.size(); i++){
-          //   System.out.println("================part two HW=====================");
-          //   System.out.println(pData.get(i).getFirstName());
-          //   System.out.println(pData.get(i).getLastName());
-          //   System.out.println(pData.get(i).getZip());
-          // }
+          for(int i =0; i < pData.size(); i++){
+            System.out.println("================part two HW=====================");
+            System.out.println(pData.get(i).getFirstName());
+            System.out.println(pData.get(i).getLastName());
+            System.out.println(pData.get(i).getZip());
+          }
           System.exit(0);
         }
     }
