@@ -1,15 +1,23 @@
 import java.util.*;
 public class CleanerNumberReader{
   public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    int input = 0;
     int countDuplicate = 0;
     ArrayList<Integer> userList = new ArrayList<Integer>();
-    userList.add(10);
-    userList.add(10);
-    userList.add(9);
-    userList.add(10);
-    userList.add(10);
-    userList.add(9);
-    userList.add(1);
+    // userList.add(10);
+    // userList.add(10);
+    // userList.add(9);
+    // userList.add(10);
+    // userList.add(10);
+    // userList.add(9);
+    // userList.add(1);
+    while(input != -1){
+        System.out.println("Enter a number 0 - 100 press -1 to quit");
+        input = scan.nextInt();
+        if(input != -1)
+          userList.add(input);
+    }
 
     Collections.sort(userList);
 
