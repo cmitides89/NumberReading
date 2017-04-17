@@ -2,18 +2,8 @@ import java.io.*;
 import java.util.*;
 public class TestPersonalData{
   public static void main(String[] args) throws IOException {
-    // //PART 3 OF HW SAVE AND READ FROM A FILE
-    // String filename = "myPersonalData.txt";
-    // File personalData = new File(filename);
-    // //if the file does not exist make it
-    // if(!personalData.exists()){
-    //   personalData.createNewFile();
-    // }
-    // System.out.println(filename+" was created");
-    // //make filewriter instance w personalData file & BF instance w FW
-    // FileWriter fw = new FileWriter(personalData);
-    // BufferedWriter writeToFile = new BufferedWriter(fw);
-
+    //PART 2 OF HW SAVE AND READ FROM AN OBJECT
+    
     //create an arraylist to store our object which holds the
     ArrayList<PersonalData> pData = new ArrayList<PersonalData>();
 
