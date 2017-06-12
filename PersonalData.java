@@ -1,28 +1,19 @@
 public class PersonalData{
-  private String firstName;
-  private String lastName;
-  private int zip;
+  public String firstName;
+  public String lastName;
+  public int zip;
 
   PersonalData(){
 
   }
-  PersonalData(String firstName, String lastName, String zip){
+  PersonalData(String firstName, String lastName, int zip){
     this.firstName = firstName;
     this.lastName = lastName;
-    //our input in the test class is a string, so convert the string into int
-    this.zip = Integer.parseInt(zip);
+    this.zip = zip;
   }
 
-  public String getFirstName(){
-    return this.firstName;
-  }
-
-  public String getLastName(){
-    return this.lastName;
-  }
-
-  public int getZip(){
-    return this.zip;
+  public String toString(){
+    return "firstName= "+firstName +" lastName= "+lastName+" zipCode= " + zip;
   }
 
 }
