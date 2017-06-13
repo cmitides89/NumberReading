@@ -1,0 +1,3 @@
+#removing class files and txt files
+*.class
+*.txt
